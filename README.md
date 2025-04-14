@@ -1,5 +1,5 @@
 
-# UploadCareFree
+# UploadCareFree - Architecture
 
 <img src="https://pub-346c29ff168c445d97ca92055740a2ff.r2.dev/thumbnail-demo.gif" width="40%" style="border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
 <em>Seamless thumbnail loading: Instantly view blurry thumbnails while high-res images load in the background.</em>
