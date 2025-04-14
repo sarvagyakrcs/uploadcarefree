@@ -1,0 +1,1 @@
+export const PROJETC_NAME = "Uploadcarefree"
