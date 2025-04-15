@@ -1,6 +1,7 @@
 import { Hono } from 'hono'
 import { uploadToR2 } from '../lib/s3'
 import { getImageUrl } from '../lib/cdn'
+import { ALLOWED_IMAGE_MIME_TYPES } from '../config'
 
 export type Env = {
   R2_ACCOUNT_ID: string
@@ -24,6 +25,12 @@ app.post('/upload', async (c) => {
 
   if (!file || !file.name) {
     return c.text('File not provided', 400)
+  }
+
+  // Validate file MIME type
+  const fileType = file.type || 'application/octet-stream'
+  if (!ALLOWED_IMAGE_MIME_TYPES.includes(fileType)) {
+    return c.text(`Invalid file type. Only image files are allowed: ${ALLOWED_IMAGE_MIME_TYPES.join(', ')}`, 400)
   }
 
   const key = `${file.name}`

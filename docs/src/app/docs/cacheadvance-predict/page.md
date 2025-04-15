@@ -1,5 +1,5 @@
 ---
-title: CacheAdvance.predict()
+title: Upload a image
 nextjs:
   metadata:
     title: CacheAdvance.predict()
